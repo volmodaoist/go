@@ -1,0 +1,7 @@
+go 1.21.0
+
+use (
+	// 只有添加go.mod文件的目录才能使用use命令添加进来
+	// ./code-from-book
+	./projects 
+)
