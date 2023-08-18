@@ -12,8 +12,8 @@
 
 ```shell
 # 关于Go环境配置可能需要修改下面两个配置文件（Mac/Linux)
-(base) >> go git:(main) ✗ code ~/.bash_profile      		 # 用户级别的配置文件，适用于当前用户                             
-(base) >> go git:(main) ✗ code /etc/profile 						 # 系统级别的配置文件，适用于全部用户
+(base) >> go git:(main) ✗ code ~/.bash_profile      	# 用户级别的配置文件，适用于当前用户                             
+(base) >> go git:(main) ✗ code /etc/profile 			# 系统级别的配置文件，适用于全部用户
 
 # 使用命令查看所有环境
 (base) >> go git:(main) ✗ go env
@@ -23,7 +23,7 @@
 /Users/Taoist/go
 
 (base) >> go git:(main) ✗ cd /Users/Taoist/go			# 然后切入目录查看
-(base) >> go git:(main) ✗ ls											# 查看当前目录包含哪些文件夹
+(base) >> go git:(main) ✗ ls							# 查看当前目录包含哪些文件夹
 bin pkg															
 
 # 查看发现只有 bin、pkg 两个文件夹，此时不得不说早期的 GOPATH 机制
@@ -54,13 +54,18 @@ bin pkg
 | go.work  | 如果一个文件目录包含 go.mod， 则其 可以通过 use 关键字加入 go.work 文件，使其变成module，一个 module 只允许一个 main 函数作为入口，有时候我们并不编写大项目，而是仅仅针对算法问题编写若干份短小的代码，这些代码文件都有 main 函数，此时可以规定当前 workshop 下面的一个子目录，将其变为 module，比如 ./dependencies，除此文件夹内部以外的其他 go 代码均可正常使用 run 或 build 运行、编译，而且亦可享用导入的非标准模块 |
 
 ```go
+/*
+ * 下面给出的go.work本项目的文件
+ * 只有包含 go.mod 文件的目录才能使用 use 命令添加进来
+*/
 go 1.21.0
 
 use (
-	// 只有包含 go.mod 文件的目录才能使用 use 命令添加进来
 	./dependencies
 )
 ```
+
+---
 
 
 
