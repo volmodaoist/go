@@ -12,18 +12,18 @@
 
 ```shell
 # 关于Go环境配置可能需要修改下面两个配置文件（Mac/Linux)
-(base) >> go git:(main) ✗ code ~/.bash_profile      	# 用户级别的配置文件，适用于当前用户                             
-(base) >> go git:(main) ✗ code /etc/profile 			# 系统级别的配置文件，适用于全部用户
+(base) >> go git:(main) ✗ code ~/.bash_profile  # 用户级别的配置文件，适用于当前用户
+(base) >> go git:(main) ✗ code /etc/profile		# 系统级别的配置文件，适用于全部用户
 
 # 使用命令查看所有环境
 (base) >> go git:(main) ✗ go env
 
-# 针对性的查看某个环境变量
-(base) >> go git:(main) ✗ go env GOPATH					# 首先使用下面的命令的查看Go下载目录
+# 针对性的查看某个环境变量，首先使用下面的命令的查看Go下载目录
+(base) >> go git:(main) ✗ go env GOPATH	
 /Users/Taoist/go
 
-(base) >> go git:(main) ✗ cd /Users/Taoist/go			# 然后切入目录查看
-(base) >> go git:(main) ✗ ls							# 查看当前目录包含哪些文件夹
+(base) >> go git:(main) ✗ cd /Users/Taoist/go	# 然后切入目录查看
+(base) >> go git:(main) ✗ ls					# 查看当前目录包含哪些文件夹
 bin pkg															
 
 # 查看发现只有 bin、pkg 两个文件夹，此时不得不说早期的 GOPATH 机制
@@ -31,8 +31,8 @@ bin pkg
 # 	1.2 早期手动下载的外部模块也需要手动配置放入 src 里面；
 
 # 而在 Go 1.11.x 版本引入了 modules 管理机制之后，
-#		2.1 项目依赖模块全部通过 go.mod 下载，然后放在 pkg/mod 里面；
-#		2.1 项目目录也不再具有限制，能够写在任意位置；
+#	2.1 项目依赖模块全部通过 go.mod 下载，然后放在 pkg/mod 里面；
+#	2.1 项目目录也不再具有限制，能够写在任意位置；
 ```
 
 ---
@@ -71,3 +71,8 @@ use (
 
 
 
+
+
+### 高级主题
+
+Go号称现代版 C/C++，使用下来感觉就是， 程序的语法非常接近 C/C++，但是又可以像是 Java、Python 那样方便的引入外部模块，同时Go相较于 C/C++ 又多出了很多避免程序员炫技的限制。整体看下来，感觉是一门不错的语言。能做数值计算、数据分析、深度学习、网络爬虫、网络服务器等等。实现这些高级主题，需要深入学习 Go [函数](https://go.dev/tour/methods/1)、[泛型](https://go.dev/tour/generics/1)、[并发](https://go.dev/tour/concurrency/1) 这些特性
